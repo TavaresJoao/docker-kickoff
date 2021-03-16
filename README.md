@@ -6,6 +6,16 @@ Run docker with the following command
 sudo service docker start
 ```
 
+If necessary read/write permissions on app folder
+```bash
+sudo chmod -Rv ugo+rwx app/
+```
+
+Show permissions with
+```bash
+ls -lR app/
+```
+
 ## Instalation
 
 ### Linux OS based systems

@@ -1,0 +1,7 @@
+.git/
+README.md
+app.env
+db.env
+pgadmin.env
+Dockerfile
+docker-compose.yml
