@@ -47,8 +47,10 @@ $ sudo systemctl status docker
 
 #### docker-compose install
 
+Para instalar a versão do 1.27.4
+
 ```bash
-$ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
 ```bash
