@@ -1,6 +1,11 @@
 # docker-kickoff
 Instructions and Projects to start working with docker
 
+Run docker with the following command
+```bash
+sudo service docker start
+```
+
 ## Instalation
 
 ### Linux OS based systems
