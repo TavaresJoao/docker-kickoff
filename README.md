@@ -84,9 +84,52 @@ Ensure that /usr/local/bin is on PATH and execute the following command to check
 docker-compose --version
 ```
 
+#### Manage Docker as a non-root user
+
+1. Create the docker group
+
+```bash
+sudo groupadd docker
+```
+
+2. Add your user to the docker group
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+3. Log out and log back in so that your group membership is re-evaluated
+
+```bash
+newgrp docker
+```
+
+4. Verify that you can run docker commands without sudo
+
+```bash
+docker run hello-world
+```
+
+
+### Configure Docker to start on boot
+
+```bash
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+```
+
+To disable this behavior, use disable instead.
+
+```bash
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service
+```
+
 ## Useful links
 [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-pt](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-pt)  
 [https://medium.com/codigorefinado/docker-no-linux-dentro-do-windows-10-com-wsl-2-f52b91931267](https://medium.com/codigorefinado/docker-no-linux-dentro-do-windows-10-com-wsl-2-f52b91931267)
 [https://docs.docker.com/compose/django/](https://docs.docker.com/compose/django/)
 [https://medium.com/shot-code/running-django-postgresql-containers-and-persisting-data-with-docker-4dd8e4dd5361](https://medium.com/shot-code/running-django-postgresql-containers-and-persisting-data-with-docker-4dd8e4dd5361)
 [https://github.com/vinhlee95/django-pg-docker-tutorial](https://github.com/vinhlee95/django-pg-docker-tutorial)
+[https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
+[https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
